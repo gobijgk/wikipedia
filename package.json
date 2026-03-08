@@ -2,12 +2,20 @@
   "scripts": {
     "test": "playwright test",
     "test:debug": "playwright test --debug",
-    "test:headed": "playwright test --headed"
+    "test:headed": "playwright test --headed",
+    "lint": "cross-env ESLINT_USE_FLAT_CONFIG=false eslint . --ext .ts",
+    "lint:fix": "cross-env ESLINT_USE_FLAT_CONFIG=false eslint . --ext .ts --fix"
   },
   "dependencies": {
     "playwright": "^1.58.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2"
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-playwright": "^2.9.0"
   }
 }

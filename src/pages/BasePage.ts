@@ -1,7 +1,7 @@
 import { Locator, Page, expect } from '@playwright/test';
 
 export default class BasePage {
-  protected page: Page;
+  public page: Page;
 
   constructor(page: Page) {
     this.page = page;
@@ -28,4 +28,8 @@ export default class BasePage {
   async expectText(locator: Locator, text: string) {
     await expect(locator).toHaveText(text);
   }
+  async expectContainText(actual: string, keyword: string) {
+    expect(actual).toContain(keyword);
+  }
+
 }

@@ -1,0 +1,21 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "playwright"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:playwright/recommended"
+  ],
+  "rules": {
+    "playwright/no-wait-for-timeout": "warn",
+    "playwright/no-force-option": "warn",
+    "playwright/expect-expect": "error"
+  }
+}

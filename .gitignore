@@ -1,0 +1,13 @@
+# Node modules and logs
+node_modules/
+npm-debug.log*
+
+# Playwright test results and screenshots
+test-results/
+playwright-report/
+
+# Typescript
+dist/
+
+# Misc
+.env

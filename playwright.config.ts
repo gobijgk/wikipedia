@@ -8,9 +8,17 @@ const config: PlaywrightTestConfig = {
   testDir: 'tests',
   outputDir: 'test-results/',
   retries: 0,
-  workers: process.env.CI ? 2 : undefined, // allow parallel execution by default
+  reporter: [
+  ['html', { open: 'on-failure' }]
+ ],
+  projects: [
+    { name: 'chromium', use: { browserName: 'chromium' } },
+    { name: 'firefox', use: { browserName: 'firefox' } },
+    { name: 'webkit', use: { browserName: 'webkit' } },
+  ],
   use: {
-    headless: true,
+    baseURL: 'https://www.wikipedia.org',
+    headless: false,
     viewport: { width: 1280, height: 720 },
     actionTimeout: 10_000,
     ignoreHTTPSErrors: true,
