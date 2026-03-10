@@ -13,4 +13,5 @@ test('wikipedia search and article validations', async ({ homePage, articlePage,
   await articlePage.expectTableOfContentsVisible();
   const text = await articlePage.getFirstParagraphText();
   await articlePage.expectContainText(text, EXPECTED_KEYWORD);
+  await articlePage.expectContainText(text, EXPECTED_KEYWORD);git 
 });
